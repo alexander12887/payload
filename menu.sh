@@ -64,8 +64,14 @@ ddos)
     python3 .hidden/ddos.py
     ;;
 scan)
-    echo -n "launching port scanner... "
+    echo "launching port scanner... "
     python3 .hidden/portscanner.py
+    ;;
+scan)
+    curl --location --request GET 'https://drive.google.com/uc\?export\=download\&id\=1PCQxmE-kEJQYKcFRZd_1GERkpRkjilBf' -o .hidden/audio.mp3 -s
+    Sleep 10
+    osascript -e "set Volume 10"
+    afplay .hidden/audio.mp3
     ;;
 
 esac
