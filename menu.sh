@@ -8,7 +8,9 @@ version       show macs version
 screenshot    screenshots macs current screen
 talk          text to speech
 help          shows the help menu
-custom        enter custom bash command"
+custom        enter custom bash command
+ddos          launches ddos script
+scan          launches port scanner"
 
 while true; do
 echo -n "> "
