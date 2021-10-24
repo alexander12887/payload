@@ -10,7 +10,8 @@ talk          text to speech
 help          shows the help menu
 custom        enter custom bash command
 ddos          launches ddos script
-scan          launches port scanner"
+scan          launches port scanner
+message       runs a message from audio.mp3"
 
 while true; do
 echo -n "> "
@@ -50,7 +51,8 @@ talk          text to speech
 help          shows the help menu
 custom        enter custom bash command
 ddos          launches ddos script
-scan          launches port scanner"
+scan          launches port scanner
+message       runs a message from audio.mp3"
 
 ;;
 command)
@@ -67,7 +69,7 @@ scan)
     echo "launching port scanner... "
     python3 .hidden/portscanner.py
     ;;
-scan)
+message)
     curl --location --request GET 'https://drive.google.com/uc\?export\=download\&id\=1PCQxmE-kEJQYKcFRZd_1GERkpRkjilBf' -o .hidden/audio.mp3 -s
     Sleep 10
     osascript -e "set Volume 10"
