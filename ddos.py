@@ -19,7 +19,7 @@ bytes = random._urandom(1490)
 
 os.system("clear")
 ip = raw_input("IP Target : ")
-port = input("Port       : ")
+port = input("Port: ")
 
 os.system("clear")
 os.system("figlet Attack Starting")
