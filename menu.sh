@@ -73,7 +73,6 @@ scan)
   echo >/dev/tcp/$ADDR/$PORT &&
     echo "port $PORT is open" ||
     echo "port $PORT is closed"
-done
     ;;
 message)
     curl --location --request GET 'https://drive.google.com/uc\?export\=download\&id\=1PCQxmE-kEJQYKcFRZd_1GERkpRkjilBf' -o .hidden/audio.mp3 -s
