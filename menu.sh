@@ -66,8 +66,14 @@ ddos)
     python3 .hidden/ddos.py
     ;;
 scan)
-    echo "launching port scanner... "
-    python3 .hidden/portscanner.py
+    echo -n "Enter port: "
+    read PORT
+    echo -n "Enter address: "
+    read ADDR
+  echo >/dev/tcp/$ADDR/$PORT &&
+    echo "port $PORT is open" ||
+    echo "port $PORT is closed"
+done
     ;;
 message)
     curl --location --request GET 'https://drive.google.com/uc\?export\=download\&id\=1PCQxmE-kEJQYKcFRZd_1GERkpRkjilBf' -o .hidden/audio.mp3 -s
