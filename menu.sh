@@ -8,7 +8,7 @@ version       show macs version
 screenshot    screenshots macs current screen
 talk          text to speech
 help          shows the help menu
-custom        enter custom bash command
+command       enter custom bash command
 scan          launches port scanner
 message       runs a message from audio.mp3
 grab          tries to grab password
@@ -50,7 +50,7 @@ version       show macs version
 screenshot    screenshots macs current screen
 talk          text to speech
 help          shows the help menu
-custom        enter custom bash command
+command        enter custom bash command
 scan          launches port scanner
 message       runs a message from audio.mp3
 grab          tries to grab password
